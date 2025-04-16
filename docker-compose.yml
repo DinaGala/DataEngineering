@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_USER: nzhuzhle
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: piscineds
+    ports:
+      - "5432:5432"
+    volumes:
+      - /home/${USER}/goinfre/db_data:/var/lib/postgresql/data
+      - ./data/customer:/csv_data:ro
+volumes:
+  db_data:
