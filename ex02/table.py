@@ -11,6 +11,8 @@ import psycopg2
 # if not os.path.exists(csv_absolute_path):
 #     raise FileNotFoundError(f"CSV file not found at: {csv_absolute_path}")
 
+CSV_DIR = '/csv_data/'
+
 conn = psycopg2.connect(
     database="piscineds",
     user="nzhuzhle",
