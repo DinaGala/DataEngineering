@@ -48,7 +48,7 @@ def create_table_and_import_data(csv_file_path, table_name):
     for header in headers[1:]:
         dtype_mapping[header] = map_dtype(header, df_sample[header])
     
-    df_full = pd.read_csv(csv_file_path, low_memory=False)
+    df_full = pd.read_csv(csv_file_path, nrows=1, low_memory=False)
 
     df_full.to_sql(
         name=table_name,
